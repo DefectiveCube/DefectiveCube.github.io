@@ -1,0 +1,163 @@
+/* laptop.css */
+			.laptop{
+				perspective: 1000px;
+				transform-style: preserve-3d;
+				-webkit-backface-visibility: visible;
+				
+				-webkit-animation-name: ApproachLaptop;
+				-webkit-animation-duration: 2s;
+			}
+			
+			.laptop-name {
+				color: silver;
+				margin: 0 auto;
+				position: absolute;				
+				bottom: 0;
+				transform: translateX(45%);
+				width: 100%;
+			}
+			
+			.display {
+				background: black;
+				border: 4px solid silver;
+				border-radius: 10px;
+				box-sizing: border-box;
+				height: 80vh;
+				margin: 0% auto;
+				transform: rotateX(3deg);
+				transform-origin: bottom;
+				width: 80vw;
+			}
+			
+			.screen {
+				background: white;
+				border: 20px solid #222;
+				border-radius: 5px;
+				box-sizing: border-box;
+				height: 100%;
+				width: 100%;				
+			}
+			
+			.bezel {
+				border: 2% solid #111;	
+			}
+			
+			.inset {
+				margin: 0 auto;
+				background: silver;
+				border-radius: 10px;
+				margin: 0 auto;
+				padding-top: 1%;
+				transform: rotateX(50deg);
+				transform-origin: top;
+				width: 80vw;
+			}
+			
+			.keyboard {
+				background: silver;
+				border: 1px solid #999;
+				border-radius: 10px;
+				box-shadow: 0px 0px 40px black inset;
+				display: flex;	
+				flex-direction: column;
+				justify-content: 	center;				
+				margin: 0 auto;
+				padding: 1.5%;
+				width: 80%;
+			}
+			
+			.keyboard .row {
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+			}
+						
+			.key {
+				background: black;
+				border-radius: 4px;	
+				box-shadow: 1px 1px 10px #000;
+				color: white;
+				display: flex;
+				flex-direction: column;
+				flex-wrap: nowrap;
+				flex-grow: 1;
+				font-family: sans-serif;
+				height: 50px;
+				justify-content: center;
+				margin: 0.25%;
+				text-align: center;
+				vertical-align: middle;
+			}
+			
+			.key:before, .key:after {
+				content: "";
+				display: none;
+				background: white;
+				position: absolute;
+				width: 100%;
+				height: 2px;
+			}
+			
+			.short .key {
+				height:	25px;
+			}
+			
+			.wide {
+				width: 8%;	
+			}	
+			
+			.extra-wide {
+				width: 8%;	
+			}
+			
+			.key.super-wide {
+				width: 10% ;	
+			}
+			
+			.key.space-bar {
+				width: 45%;	
+			}
+						
+			.left {
+				flex-direction: row;
+				text-align: left;
+				justify-content: flex-start;
+			}
+
+			.right {
+				flex-direction: row;
+				text-align: right;
+				justify-content: flex-end;	
+			}
+
+			.left p {
+				margin: 0 0 2.5% 5%;
+			}			
+					
+			.right p {
+				margin: 0 2.5% 0 5%;
+			}
+			
+			.top {
+				flex-direction: column;
+				justify-content: flex-start;
+				vertical-align: top;
+			}
+			
+			.bottom {
+				flex-direction: column;
+				justify-content: flex-end;
+				vertical-align: bottom;
+			}
+			
+			.touchpad {
+				background: silver;
+				border: 1px solid #000;
+				border-radius: 10px;
+				box-shadow: 
+					1px -1px 2px #000 inset,
+					-1px 1px 2px #fff inset;
+				margin: 2% auto;
+				height: 200px;
+				width: 25%;
+			}

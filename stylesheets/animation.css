@@ -1,0 +1,87 @@
+/* animations */
+
+@-webkit-keyframes fadeInOut {	
+	0% { opacity: 0; height: 100vh; font-size: 12em; }
+	50% {opacity: 1; height: 100vh; font-size: 12em; }
+	99% {font-size: 12em;}
+	100% {opacity: 0; height: 0;}
+}
+
+@-webkit-keyframes hideBox {
+	0% { 
+		background: transparent;
+		border: none;
+		box-shadow: 0 0 0 transparent;
+	}
+	
+	90% {
+		background: transparent;
+		border: none;
+		box-shadow: 0 0 0 transparent; 
+	}
+	
+	100% { 
+		background: blue;
+		border: rgb(75,75,255) solid 2px;
+		box-shadow: 4px 4px 40px #000;
+	}
+}
+
+@-webkit-keyframes HeaderText {
+	0% {
+		color: black;
+		font-size: 108pt;
+		opacity: 0;		
+	}
+	
+	20% {
+		opacity: 1;	
+	}
+	
+	50% {
+		font-size: 108pt;
+	}
+	
+	90% {
+		color: black;
+	}
+	
+	100% {
+		color: white;	
+		font-size: 36pt;
+	}
+}
+
+@-webkit-keyframes NameText {
+	0% {
+		border: transparent solid 4px;
+	}
+	
+	90% {
+		border: transparent solid 4px;	
+	}
+	
+	100 {
+		border: #eee solid 4px;
+	}
+}
+
+@-webkit-keyframes OpenScreen {
+	0% {
+		transform: rotateX(-45deg);
+	}
+	
+	100% {
+		transform: rotateX(3deg);
+	}
+}
+
+@-webkit-keyframes ApproachLaptop{
+	0% {
+		transform: translateY(75%) scale(0.8);
+	}
+	
+	100% {
+		transform: translateY(0) scale(1);
+	}
+}

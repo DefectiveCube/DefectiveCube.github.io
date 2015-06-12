@@ -1,115 +1,558 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex,nofollow">
+	<head>
+		<meta charset='utf-8'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="robots" content="noindex,nofollow">
+<!--
+		<link href="stylesheets/parallax.css" rel="stylesheet">
+		<link href="stylesheets/slides.css" rel="stylesheet">
+-->		
+		<link href="stylesheets/animation.css" rel="stylesheet">
+		<link href="stylesheets/laptop.css" rel="stylesheet">
+		<link href="http://fonts.googleapis.com/cssfamily=Source+Sans+Pro:300,300italic,400,600,700" rel="stylesheet">
 
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600,700" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+		<!--
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+		-->
+				
+		<title>Kirk Dietz | Software Developer</title>
+		<style>
+			* { margin: 0; padding: 0; }
+											
+			.card {
+				background: #000;
+				border: 0;
+				height: 200px;
+				width: 200px;
+			}
+			
+			.card > h4 {
+				color: white;	
+			}
+			
+			.flex-container {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-flow: row wrap;
+				justify-content: flex-start;
+			}
+			
+			nav {
+				border-radius: 10px;
+				color: white;
+				margin-top: 1%;
+				margin-left: 1%;
+				position: fixed;
+				z-index: 1;
+			}
+			
+			nav ul {
+				display: flex;
+				flex-direction: column;
+			}
+			
+			nav li {
+				background: rgba(128,128,128,0.75);
+				padding: 10px;
+				list-style: none;
+			}
+			
+			nav li:hover {
+				background: teal;	
+			}		
+						
+			.parallax {
+				display: flex;
+				flex-direction: column;
+				flex-wrap: nowrap;
+				overflow-y: auto;
+				overflow-x: hidden;
+			}
+			
+			.parallax > div {
+				height: 100vh;
+				width: 100vw;
+			}
+			
+			.parallax > div:nth-of-type(odd) {
+				background: white;	
+			}
+			
+			.parallax > div:nth-of-type(even) {
+				background: black;	
+			}
+			
+			#group0 {
+				font-family: "Consolas", monospace;
+				font-size: 32pt;
+				width: 100%;
+				height: 0;
+				z-index: 12;
+			}
+			
+			#group0 .code, #group0 .message {
+				background: #023;
+				color: white;
+				display: flex;
+				flex-direction: column;
+				margin: 0 auto;
+			}
+			
+			#group0 .code {
+				display: none;
+				text-align: right;
+			}
+			
+			#group0 .code p {
+				width: 75%;	
+			}
+			
+			#group0 .message {
+				display: block;	
+				font-family: Verdana, sans-serif;
+			}
+			
+			.code .keyword {}
+			.code .type { color: cornflowerblue;}
+			.code .method {}
+			.code .identifier {}
+			.code .token {}
+			
+			#group0 .message h1 {
+				font-size: 0;
+				text-align: center;
+				vertical-align: middle;
+				
+				
+				-webkit-animation-name: fadeInOut;
+				-webkit-animation-duration: 6s;
+			}
+			
+			#group1 {
+				overflow: hidden;
+			}
+			
+			#contact-page {
+				
+			}
+			
+			#blog {
+				
+			}
+		</style>
+	</head>
+	
+	<body>
+		<nav>
+			<ul>
+				<li>Intro</li>
+				<li>Languages</li>
+				<li>Concepts</li>
+				<li>Frameworks</li>
+				<li>Tools</li>
+				<li>Systems</li>
+			</ul>
+		</nav>	
 
-    <title>Kirk Dietz | Software Developer</title>
-
-    <style>
-    body {
-      min-height: 2000px;
-      padding-top: 70px;
-    }
-    </style>
-  </head>
-
-  <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Kirk Dietz</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-
-                <li class="dropdown-header">C#</li>
-                <li><a href="#">File System Prototype</a></li>
-                <li><a href="#">Flight Data Analyzer</a></li>
-                <li><a href="#">Football Pool</a></li>
-                <li><a href="#">Web Service (<abbr title="Windows Communication Framework">WCF</abbr>)</a></li>
-                <li class="divider"></li>
-
-                <li class="dropdown-header">C++</li>
-                <li><a href="#">Basic Math Expression Evaluation</a></li>
-                <li class="divider"/>
-
-                <li class="dropdown-header">HTML</li>
-                <li><a href="#">Letter Identification</a></li>
-                <li><a href="#cal">Calendar</a></li>
-                <li class="divider"/>
-
-                <li class="dropdown-header">Java</li>
-                <li><a href="#">Database by Reflection (<abbr title="Proof of Concept">PoC</abbr>)</a></li>
-                <li class="divider"/>
-              
-                <li class="dropdown-header">Node.js</li>
-                <li><a href="#node-chat">WebSocket Chat Server</a></li>
-                <li class="divider"></li>
-              
-                <li class="dropdown-header">SQL</li>
-                <li><a href="#">Euchre Schema</a></li>
-                <li class="divider"></li>
-              
-                <li class="dropdown-header">Udacity Front-End Web Developer Nanodegree</li>
-                <li><a href="frontend-nanodegree-portfolio">Mock Portfolio</a></li>
-                <li><a href="frontend-nanodegree-resume">Javascript Resume</a></li>
-                <li><a href="frontend-nanodegree-arcade-game">Arcade Game</a></li>
-                <li><a href="#frontend-nanodegree-website-optimization">Website Optimization</a></li>
-                <li><a href="#frontend-nanodegree-map">Neighborhood Map</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#pens">Codepens <span class="caret"/></a>
-            </li>
-            <li class="dropdown">
-              <a href="#docs" class="dropdown-toggle" data-toggle="dropdown">Documentation <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li class="dropdown-header">C#</li>
-                <li class="dropdown-header">C++</li>
-                <li class="dropdown-header">x86 Assembly</li>
-              </ul>
-            </li>
-            <li><a href="#photos">Photography</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Default</a></li>
-            <li><a href="#">Static top</a></li>
-            <li class="active"><a href="#">Fixed top</a></li>
-          </ul>
-        </div>
+		<div class="parallax">
+			<div id="group0" class="parallax__group">
+				<div class="parallax__layer parallax__layer--base">
+					<div class="code">
+						<p><span class="type">Console</span>.WriteLine("Hello");</p>
+						<p>printf("Hello");</p>
+						<p>std::cout << "Hello";</p>
+						<p>print('Hello');</p>
+						<p>System.println("Hello");</p>
+					</div>
+					
+					<div class="message">
+						<h1>Hello</h1>
+					</div>
+				</div>
+			</div>
+			
+			<div id="group1" class="parallax__group">
+				<div class="parallax__layer parallax__layer--base">
+					<div class="floor"></div>
+					<div class="laptop">
+						<div class="display">
+							<div class="top"></div>
+							<div class="screen">
+								<div class="bezel">
+									<p>Hello</p>
+									<p>my name is</p>
+									<p>Kirk</p>
+								</div>
+								<p class="laptop-name">CodeNinja Pro</p>
+							</div>
+						</div>
+						<div class="inset">
+							<div class="keyboard">
+							<div class="row short">
+								<div class="key">esc</div>
+								<div class="key">F1</div>
+								<div class="key">F2</div>
+								<div class="key">F3</div>
+								<div class="key">F4</div>							
+								<div class="key">F5</div>
+								<div class="key">F6</div>
+								<div class="key">F7</div>
+								<div class="key">F8</div>
+								<div class="key">F9</div>
+								<div class="key">F10</div>
+								<div class="key">F11</div>
+								<div class="key">F12</div>
+								<div class="key"></div>
+							</div>
+							<div class="row">
+								<div class="key">
+									<p>~</p>
+									<p>`</p>
+								</div>
+								<div class="key">
+									<p>!</p>
+									<p>1</p>
+								</div>
+								<div class="key">2</div>
+								<div class="key">3</div>
+								<div class="key">4</div>
+								<div class="key">5</div>
+								<div class="key">6</div>
+								<div class="key">7</div>
+								<div class="key">8</div>
+								<div class="key">9</div>
+								<div class="key">0</div>
+								<div class="key">-</div>
+								<div class="key">+</div>
+								<div class="key wide bottom right">
+									<p>delete</p></div>
+							</div>
+							<div class="row">
+								<div class="key wide bottom left">
+									<p>tab</p>
+								</div>	
+								<div class="key">Q</div>
+								<div class="key">W</div>
+								<div class="key">E</div>
+								<div class="key">R</div>								
+								<div class="key">T</div>
+								<div class="key">Y</div>
+								<div class="key">U</div>
+								<div class="key">I</div>								
+								<div class="key">O</div>
+								<div class="key">P</div>								
+								<div class="key">[</div>
+								<div class="key">]</div>								
+								<div class="key">\</div>
+							</div>
+							<div class="row">
+								<div class="key extra-wide bottom left">
+									<p>caps lock</p>
+								</div>	
+								<div class="key">A</div>
+								<div class="key">S</div>
+								<div class="key">D</div>
+								<div class="key">F</div>								
+								<div class="key">G</div>
+								<div class="key">H</div>
+								<div class="key">J</div>
+								<div class="key">K</div>								
+								<div class="key">L</div>
+								<div class="key">;</div>								
+								<div class="key">'</div>
+								<div class="key extra-wide bottom right">
+									<p>enter</p>
+									<p>return</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="key super-wide bottom left"><p>shift</p></div>	
+								<div class="key">Z</div>
+								<div class="key">X</div>
+								<div class="key">C</div>
+								<div class="key">V</div>								
+								<div class="key">B</div>
+								<div class="key">N</div>
+								<div class="key">M</div>
+								<div class="key">&lt;</div>								
+								<div class="key">&gt;</div>
+								<div class="key">?</div>								
+								<div class="key super-wide">shift</div>
+							</div>
+							<div class="row">
+								<div class="key">fn</div>
+								<div class="key bottom left">control</div>
+								<div class="key bottom left">option</div>
+								<div class="key bottom left">command</div>								
+								<div class="key space-bar"></div>
+								<div class="key bottom right">command</div>
+								<div class="key bottom right">option</div>
+								<div class="key">left</div>								
+								<div class="key">up</div>
+								<div class="key">down</div>								
+								<div class="key">right</div>								
+							</div>
+							</div>
+							<div class="touchpad"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+    <div id="group2" class="parallax__group">
+      <div class="parallax__layer parallax__layer--base">
+        <div class="title">Base Layer</div>
+      </div>
+      <div class="parallax__layer parallax__layer--back">
+        <div class="title">Background Layer</div>
       </div>
     </div>
-
-    <div class="container">
-      <div class="jumbotron">
-        <h1>Hello</h1>
-        <p>This is my personal website that attempts to encompass my works</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="#navbar" role="button">View navbar docs &raquo;</a>
-        </p>
+			
+    <div id="group3" class="parallax__group">
+      <div class="parallax__layer parallax__layer--fore">
+        <div class="title">Foreground Layer</div>
       </div>
-
-        <p>This site is my personal site, and it does not reflect the views of my employers, past or present</p>
+      <div class="parallax__layer parallax__layer--base">
+        <div class="title">Base Layer</div>
+      </div>
     </div>
+    <div id="group4" class="parallax__group">
+      <div class="parallax__layer parallax__layer--base">
+        <div class="title">Base Layer</div>
+      </div>
+      <div class="parallax__layer parallax__layer--back">
+        <div class="title">Background Layer</div>
+      </div>
+      <div class="parallax__layer parallax__layer--deep">
+        <div class="title">Deep Background Layer</div>
+      </div>
+    </div>
+    <div id="group5" class="parallax__group">
+      <div class="parallax__layer parallax__layer--fore">
+        <div class="title">Foreground Layer</div>
+      </div>
+      <div class="parallax__layer parallax__layer--base">
+        <div class="title">Base Layer</div>
+      </div>
+    </div>
+    <div id="group6" class="parallax__group">
+      <div class="parallax__layer parallax__layer--back">
+        <div class="title">Background Layer</div>
+      </div>
+      <div class="parallax__layer parallax__layer--base">
+        <div class="title">Base Layer</div>
+      </div>
+    </div>
+    <div id="group7" class="parallax__group">
+      <div class="parallax__layer parallax__layer--base">
+        <div class="title">Base Layer</div>
+      </div>
+    </div>
+  </div>
+		</div>	
+		<!--
+		
+		<div class="container">
+			<h3>Languages</h3>
+			<section id="langs" class="flex-container">
+				<div id="csharp" class="card">
+					<h4>C#</h4>
+				</div>
+				
+				<div id="java" class="card">
+					<h4>Java</h4>
+				</div>
 
-    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+				<div class="card">
+					<h4>Visual Basic</h4>
+				</div>
+				
+				<div class="card">
+					<h4>CIL</h4>
+				</div>
+				<div class="card">
+					<h4>C++</h4>
+				</div>
+				
+				<div id="html" class="card">
+					<h4>HTML5</h4>	
+				</div>
+		
+				<div id="js" class="card">
+					<h4>JavaScript</h4>
+				</div>
+		
+				<div class="card">
+					<h4>CSS</h4>
+				</div>
+				
+				<div class="card">
+					<h4>XML</h4>
+				</div>
+				
+				<div class="card">
+					<h4>XML Schema</h4>
+				</div>
+				
+				<div class="card">
+					<h4>XPath</h4>
+				</div>				
+				<div class="card">
+					<h4>XAML</h4>
+				</div>
+				
+				<div class="card">
+					<h4>Assembly</h4>
+				</div>
+			</section>
+			
+			<h3>Concepts</h3>
+			<section id="concepts" class="flex-container">				
+				<div class="card">
+					<h4>Collections</h4>
+				</div>
+				
+				<div class="card">
+					<h4>Generics</h4> 
+				</div>
+				
+				<div class="card">
+					<h4>Threading</h4>
+				</div>
+				
+				<div class="card">
+					<h4>Reflection</h4>
+				</div>
+				
+				<div class="card">
+					<h4>Code Generation</h4>
+				</div>
+				
+				<div class="card">
+					<h4>Covariance & Contravariance</h4>
+				</div>
+			</section>
+		
+			<h3>Frameworks & Libraries</h3>
+			<section id="frameworks" class="flex-container">
+				<div class="card">
+					<h4>.NET</h4>
+				</div>
+				
+				<div class="card">
+					<h4>Windows Presentation Framework</h4>
+				</div>
+				
+				<div class="card">
+					<h4>Windows Communication Framework</h4>
+				</div>
+				
+				<div class="card">
+					<h4>Entity Framework</h4>
+				</div>
+				
+				<div class="card">
+					<h4>.NET Compiler Platform</h4>
+				</div>
+			</section>
+			
+			<h3>Tools</h3>			
+			<section id="tools" class="flex-container">
+				<div id="vs" class="card">
+					<h4>Visual Studio</h4>
+				</div>
+				
+				<div id="sublime" class="card">
+					<h4>Sublime Text</h4>	
+				</div>
+								
+				<div class="card">
+					<h4>Brackets</h4>
+				</div>
+				
+				<div class="card">
+					<h4>Git</h4>
+				</div>
+				
+				<div class="card">
+					<h4>SourceTree</h4>
+				</div>			
+				
+				<div class="card">
+					<h4>VMware</h4>
+				</div>
+				<div class="card">
+					<h4>Microsoft Office</h4>
+				</div>
 
-  </body>
+				<div class="card">
+					<h4>Microsoft Project</h4>
+				</div>
+
+			</section>
+						
+			<h3>Libraries</h3>
+			<section id="libs" class="flex-container">			
+				<div class="card">
+					<h4>jQuery</h4>
+				</div>
+				
+				<div class="card">
+					<h4>Bootstrap</h4>
+				</div>
+				
+				<div class="card">
+					<h4>Modernizr</h4>
+				</div>
+				
+				<div class="card">
+					<h4>Jade</h4>
+				</div>
+				
+			</section>
+			
+			<h3>Systems</h3>
+			<section id="systems" class="flex-container">
+				<div class="card">
+					<h4>
+						<p>Windows 7</p>
+						<p>Windows 10</p>
+						<p>Windows XP</p>
+					</h4>
+				</div>
+				
+				<div class="card">
+					<h4>OS X</h4>
+				</div>
+				
+				<div class="card">
+					<h4>Linux</h4>
+				</div>
+			</section>
+-->
+		</div>
+	
+	<!--
+		<div id="education" class="container">
+			<h2>Education</h2>				
+			<strong><a href="http://www.davenport.edu" target="_blank">Davenport University</a></strong>				
+			<p>Bachelor of Science, Computer Programming</p>				
+			<p>GPA: 3.38</p>
+			<p>In-Major GPA: 3.78</p>
+		</div>
+		
+		<section id="contact" class="container">
+			<h3>Contact</h3>
+			<a href="https://www.linkedin.com/pub/kirk-dietz/83/763/a90">			
+          <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" width="160" height="33" border="0" alt="View Kirk Dietz's profile on LinkedIn">
+			</a>
+		</section>		
+-->
+	</body>
 </html>
