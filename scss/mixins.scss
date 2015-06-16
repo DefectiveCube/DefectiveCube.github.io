@@ -1,0 +1,21 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin flex-box($dir,$wrap,$content) {
+    
+    display: -webkit-box;
+    display: flex;
+    
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    justify-content: $content;
+}
+
+@mixin size($width,$height){
+    width: $width;
+    height: $height;
+}

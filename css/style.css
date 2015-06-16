@@ -1,0 +1,214 @@
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+@font-face {
+  font-family: 'Breamcatcher';
+  src: url(../fonts/breamcatcher.ttf); }
+
+/* shadows */
+.elegantshadow {
+  color: #131313;
+  background-color: #e7e5e4;
+  letter-spacing: .15em;
+  text-shadow: 1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #767474, -3px 6px 1px #787777, -4px 8px 1px #7b7a7a, -5px 10px 1px #7f7d7d, -6px 12px 1px #828181, -7px 14px 1px #868585, -8px 16px 1px #8b8a89, -9px 18px 1px #8f8e8d, -10px 20px 1px #949392, -11px 22px 1px #999897, -12px 24px 1px #9e9c9c, -13px 26px 1px #a3a1a1, -14px 28px 1px #a8a6a6, -15px 30px 1px #adabab, -16px 32px 1px #b2b1b0, -17px 34px 1px #b7b6b5, -18px 36px 1px #bcbbba, -19px 38px 1px #c1bfbf, -20px 40px 1px #c6c4c4, -21px 42px 1px #cbc9c8, -22px 44px 1px #cfcdcd, -23px 46px 1px #d4d2d1, -24px 48px 1px #d8d6d5, -25px 50px 1px #dbdad9, -26px 52px 1px #dfdddc, -27px 54px 1px #e2e0df, -28px 56px 1px #e4e3e2; }
+
+.deepshadow {
+  color: #e0dfdc;
+  background-color: #333;
+  letter-spacing: .1em;
+  text-shadow: 0 -1px 0 #ffffff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9); }
+
+.deepshadow.half {
+  text-shadow: 0 -1px 0 #ffffff, 0 1px 0 #2e2e2e, 0 2px 0 #282828, 0 3px 0 #242424, 0 4px 0 #202020, 0 5px 0 #1c1c1c, 0 6px 0 #181818, 0 7px 0 #141414, 0 11px 15px rgba(0, 0, 0, 0.9); }
+
+.insetshadow {
+  color: #202020;
+  background-color: #2d2d2d;
+  letter-spacing: .1em;
+  text-shadow: -1px -1px 1px #111111, 2px 2px 1px #363636; }
+
+.retroshadow {
+  color: #2c2c2c;
+  background-color: #d5d5d5;
+  letter-spacing: .05em;
+  text-shadow: 4px 4px 0px #d5d5d5, 7px 7px 0px rgba(0, 0, 0, 0.2); }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #333;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: flex-start;
+  justify-content: nowrap;
+  overflow: hidden;
+  font-family: Raleway, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+.touch body {
+  -webkit-overflow-scrolling: touch; }
+
+header {
+  font-family: Poiret One, sans-serif;
+  order: 1;
+  height: 20vh;
+  padding: 2vh 0; }
+  header h1, header h2 {
+    text-align: center;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility; }
+  header h1 {
+    font-size: 10vmin; }
+  header h2 {
+    font-size: 6vmin; }
+
+nav {
+  font-family: Breamcatcher, sans-serif; }
+
+h1 {
+  font-size: 6vw; }
+
+h2 {
+  font-size: 3vw; }
+
+h3 {
+  font-size: 2vw; }
+
+h4 {
+  font-size: 1vw; }
+
+li {
+  list-style: none; }
+
+p {
+  font-size: 10pt; }
+
+#content {
+  width: 90vw;
+  height: 60vh;
+  background: #222;
+  border-radius: 0 0 10px 10px;
+  order: 3;
+  margin: 0 5%;
+  perspective: 1500px; }
+  #content > section {
+    background: #555;
+    border: 1vw solid transparent;
+    border-image: linear-gradient(180deg, #222, darkgoldenrod 50%, #222);
+    border-image-repeat: stretch;
+    border-image-slide: 1;
+    border-radius: 0 0 10px 10px;
+    box-sizing: border-box;
+    color: #fff;
+    height: inherit;
+    width: inherit;
+    padding: 3vw;
+    position: fixed;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform-origin: right; }
+    #content > section:target {
+      z-index: 2; }
+    #content > section:not(:target) {
+      color: transparent;
+      z-index: 1; }
+
+footer {
+  order: 4;
+  height: 10vh; }
+
+#contact {
+  color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1; }
+  #contact ul {
+    display: flex; }
+  #contact li {
+    color: black;
+    flex-grow: 1;
+    list-style: none;
+    padding: 1vw; }
+  #contact a {
+    background: #333;
+    border: 25px solid #333;
+    border-radius: 50px;
+    color: #333;
+    width: 100px;
+    height: 100px;
+    font-size: 0; }
+
+/*---- links ----*/
+a:link {
+  color: white; }
+a:active {
+  color: white; }
+a:hover {
+  color: white; }
+a:visited {
+  color: white; }
+
+/*---- navigation ----*/
+/* nav */
+nav {
+  background: #222;
+  border-radius: 10px 10px 0 0;
+  letter-spacing: 0.3vw;
+  height: 8vh;
+  margin: 0 5vw;
+  order: 2;
+  text-shadow: 0 -1px 0 #ffffff, 0 1px 0 #2c2c2c, 0 2px 0 #282828, 0 3px 0 #242424, 0 4px 0 #202020, 0 5px 0 #1c1c1c, 0 6px 0 #181818, 0 7px 0 #141414, 0 8px 15px rgba(0, 0, 0, 0.9); }
+  nav ul {
+    justify-content: center; }
+  nav li {
+    flex-grow: 1;
+    font-size: 2.8vw;
+    height: 3.5vh;
+    padding: 1vw 1vh;
+    text-align: center;
+    vertical-align: middle;
+    perspective: 600px;
+    transform-style: preserve-3d; }
+  nav a, nav a:link, nav a:active, nav a:visited {
+    color: darkgoldenrod;
+    text-decoration: none;
+    transition: color .8s; }
+  nav a:hover {
+    color: #ccc;
+    -webkit-transition: color .8s;
+    transition: all .8s; }
+
+.parallax {
+  display: none; }
+
+/*---- flexbox ----*/
+.flexbox .flex {
+  display: flex; }
+.flexbox .row {
+  flex-direction: row; }
+.flexbox .column {
+  flex-direction: column; }
+.flexbox .row.reverse {
+  flex-direction: row-reverse; }
+.flexbox .column.reverse {
+  flex-direction: column-reverse; }
+
+/*---- missing features ----*/
+/*---- animation keyframes ----*/
+@keyFrames slideId {
+ }
+
+/*---- media queries ----*/
+/* 400px is the bare minimum width on chrome */
+@media (min-width: 400px) {
+  html {
+    min-width: 100%;
+    min-height: 100%; } }
+
+
+/*# sourceMappingURL=style.css.map */

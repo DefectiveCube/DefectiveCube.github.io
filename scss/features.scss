@@ -1,0 +1,18 @@
+#required-features, 
+#flexbox, 
+#vh, 
+#vw, 
+#transforms{
+    display:none;   
+}
+
+.no-flexbox #required-features,
+.no-cssvwunit #required-features,
+.no-flexbox #flexbox,
+.no-csstransforms #transforms,
+.no-cssvhunit #vh,
+.no-cssvwunit #vw {
+    display: block;
+    position: fixed;
+    z-index: 10;
+}

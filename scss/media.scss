@@ -1,0 +1,40 @@
+/* 400px is the bare minimum width on chrome */
+@media (min-width: 400px) {
+    html {
+        min-width: 100%;
+        min-height: 100%;
+    }
+    
+    body {
+        //background: orange;
+    }
+}
+
+@media (min-width: 800px) {
+    body {
+        //background: red;
+    }        
+}
+
+@media (min-width: 1200px) {
+    body {
+        //background: green;
+    }    
+}
+
+@media (min-width: 1440px) {
+    body {
+    
+    }
+}
+@media (min-width: 1680px) {
+    body {
+        //background: purple;   
+    }
+}
+
+@media (min-width: 1920px) {
+    body {
+        //background: teal;   
+    }
+}

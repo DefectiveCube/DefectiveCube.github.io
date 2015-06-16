@@ -1,0 +1,46 @@
+// Page Dimensions
+$width: 100vw;
+$height: 100vh;
+
+$direction: column;
+$wrap: nowrap;
+$justify: flex-start;
+
+$background: #333;
+$margin: 0;
+$padding: 0;
+
+// fonts
+$head-font: Poiret One, sans-serif;
+$nav-font: Breamcatcher, sans-serif;
+$text-font: Raleway, sans-serif;
+
+// font size of elements
+$h1-size: 6vw;
+$h2-size: 3vw;
+$h3-size: 2vw;
+$h4-size: 1vw;
+$li-size: 1vw;
+$p-size: 1vw;
+
+// Dimensions
+$head-height: 10vh;
+$content-height: 60vh;
+$content-width: 90vw;
+$foot-height: 10vh;
+
+// Use order to rearrange items
+$head-order: 1;
+$nav-order: 2;
+$content-order: 3;
+$foot-order: 4;
+
+$link: white;
+$link-hover: white;
+$link-visited: white;
+$link-active: white;
+
+$nav-link: white;
+$nav-link-hover: white;
+$nav-link-visited: white;
+$nav-link-active: white;
